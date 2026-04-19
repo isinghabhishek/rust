@@ -74,5 +74,5 @@ Every module is automatically built and tested on each push via GitHub Actions.
 ---
 
 <div align="center">
-  <sub>Built with ❤️ while learning JavaScript, Python & Rust</sub>
+  <sub>Built with ❤️ while learning Rust</sub>
 </div>
