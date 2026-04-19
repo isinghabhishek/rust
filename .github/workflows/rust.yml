@@ -11,12 +11,53 @@ env:
 
 jobs:
   build:
-
+    name: Build & Test All Crates
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      - uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build hello-cargo
+        run: cargo build --verbose --manifest-path hello-cargo/Cargo.toml
+
+      - name: Build guessing_game
+        run: cargo build --verbose --manifest-path guessing_game/Cargo.toml
+
+      - name: Build variables
+        run: cargo build --verbose --manifest-path variables/Cargo.toml
+
+      - name: Build variable
+        run: cargo build --verbose --manifest-path variable/Cargo.toml
+
+      - name: Build control_flow
+        run: cargo build --verbose --manifest-path control_flow/Cargo.toml
+
+      - name: Build function
+        run: cargo build --verbose --manifest-path function/Cargo.toml
+
+      - name: Build ownership
+        run: cargo build --verbose --manifest-path ownership/Cargo.toml
+
+      - name: Test hello-cargo
+        run: cargo test --verbose --manifest-path hello-cargo/Cargo.toml
+
+      - name: Test guessing_game
+        run: cargo test --verbose --manifest-path guessing_game/Cargo.toml
+
+      - name: Test variables
+        run: cargo test --verbose --manifest-path variables/Cargo.toml
+
+      - name: Test variable
+        run: cargo test --verbose --manifest-path variable/Cargo.toml
+
+      - name: Test control_flow
+        run: cargo test --verbose --manifest-path control_flow/Cargo.toml
+
+      - name: Test function
+        run: cargo test --verbose --manifest-path function/Cargo.toml
+
+      - name: Test ownership
+        run: cargo test --verbose --manifest-path ownership/Cargo.toml
